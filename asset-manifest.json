@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/SIT320.HD/static/css/main.44bb6229.css",
+    "main.js": "/SIT320.HD/static/js/main.34e21844.js",
+    "static/js/453.a8e3d6e8.chunk.js": "/SIT320.HD/static/js/453.a8e3d6e8.chunk.js",
+    "index.html": "/SIT320.HD/index.html",
+    "main.44bb6229.css.map": "/SIT320.HD/static/css/main.44bb6229.css.map",
+    "main.34e21844.js.map": "/SIT320.HD/static/js/main.34e21844.js.map",
+    "453.a8e3d6e8.chunk.js.map": "/SIT320.HD/static/js/453.a8e3d6e8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.44bb6229.css",
+    "static/js/main.34e21844.js"
+  ]
+}
