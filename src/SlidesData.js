@@ -246,7 +246,7 @@ GES(ASIA) → SHD=15, P=0.11, R=0.12`,
     ],
   },
 
-  // 10. Results Summary
+  // 10. Summary tables / notes
   {
     title: "Results Summary & Notes",
     subtitle: "Tables & snippets",
@@ -288,7 +288,7 @@ Comparison:
 Hybrid > ΔBIC > MVP > HC/GES`,
   },
 
-  // 12. Conclusion
+  // 12. Conclusion & Future Work
   {
     title: "Conclusion & Future Work",
     subtitle: "Summary",
