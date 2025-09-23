@@ -16,7 +16,7 @@ Motivation:
 console.log("Welcome to my SIT320 TASK 11 Project Slides!");`,
   },
 
-  // 1. Problem & Setup + Figure 1 (image1)
+  // 1. Problem & Setup + Figure 1
   {
     title: "Problem & Setup",
     subtitle: "Definition",
@@ -45,12 +45,12 @@ Example step after add(0 → 3):
 add(i → j);
 delete(i → j);
 reverse(i → j);`,
-    image: "/images/image1.png",
+    image: process.env.PUBLIC_URL + "/images/image1.png",
     caption:
       "Figure 1. Example environment step (ΔBIC reward and current BIC after add(0→3)).",
   },
 
-  // 2. Methods — Reward designs (+ 작은 참고 이미지들 16,20)
+  // 2. Methods — Reward designs
   {
     title: "Methods — Reward Designs",
     subtitle: "Three approaches",
@@ -72,7 +72,10 @@ r_t = -α·ΔBIC_t + β·GenScore(G_t)
 - Balances local edits with global fidelity`,
     code: `Equation:
 r_t = -α ΔBIC_t + β GenScore(G_t)`,
-    images: ["/images/image20.png", "/images/image16.png"],
+    images: [
+      process.env.PUBLIC_URL + "/images/image20.png",
+      process.env.PUBLIC_URL + "/images/image16.png",
+    ],
     captions: [
       "Snippet: Q-learning / reward update (inline note).",
       "Snippet: Hybrid reward / tiling note.",
@@ -104,7 +107,7 @@ Parameters:
 }`,
   },
 
-  // 4. Results — MVP (edge-count): curve + 로그 (image2 + image3)
+  // 4. Results — MVP (edge-count)
   {
     title: "Results — MVP (edge-count)",
     subtitle: "Learning curve & Log",
@@ -115,14 +118,18 @@ Parameters:
 - Agent learns to match edge count, not real dependencies`,
     code: `Figure 2:
 Total reward per episode — MVP`,
-    images: ["/images/image2.png", "/images/image3.png", "/images/image4.png"],
+    images: [
+      process.env.PUBLIC_URL + "/images/image2.png",
+      process.env.PUBLIC_URL + "/images/image3.png",
+      process.env.PUBLIC_URL + "/images/image4.png",
+    ],
     captions: [
       "Figure 2. Total reward per episode — MVP.",
       "Training log excerpt (MVP run).",
     ],
   },
 
-  // 5. Results — ΔBIC-only: curve + 로그들 (image5 + image6 + image7)
+  // 5. Results — ΔBIC-only
   {
     title: "Results — ΔBIC-only",
     subtitle: "Learning curve & Logs",
@@ -134,7 +141,11 @@ Total reward per episode — MVP`,
 → Supports use of clipping + moving averages`,
     code: `Figure 3:
 Total reward per episode — ΔBIC only`,
-    images: ["/images/image5.png", "/images/image6.png", "/images/image7.png"],
+    images: [
+      process.env.PUBLIC_URL + "/images/image5.png",
+      process.env.PUBLIC_URL + "/images/image6.png",
+      process.env.PUBLIC_URL + "/images/image7.png",
+    ],
     captions: [
       "Figure 3. Total reward per episode — ΔBIC only.",
       "Training log excerpt (ΔBIC run).",
@@ -142,12 +153,16 @@ Total reward per episode — ΔBIC only`,
     ],
   },
 
-  // 6. Results — MVP/ΔBIC 추가 그래프(보조) (image8 + image10 + image9)
+  // 6. Results — MVP/ΔBIC 추가 그래프
   {
     title: "Results — Additional views (MVP / ΔBIC)",
     subtitle: "Auxiliary plots & logs",
     content: `Additional views of the same runs are included for verification.`,
-    images: ["/images/image8.png", "/images/image10.png", "/images/image9.png"],
+    images: [
+      process.env.PUBLIC_URL + "/images/image8.png",
+      process.env.PUBLIC_URL + "/images/image10.png",
+      process.env.PUBLIC_URL + "/images/image9.png",
+    ],
     captions: [
       "Extra curve (MVP / ΔBIC auxiliary).",
       "Mixed view with logs.",
@@ -155,7 +170,7 @@ Total reward per episode — ΔBIC only`,
     ],
   },
 
-  // 7. Results — Hybrid (tiled): raw/MA/clipping (image11~image15)
+  // 7. Results — Hybrid (tiled)
   {
     title: "Results — Hybrid (tiled)",
     subtitle: "Raw / Moving Average / Clipping",
@@ -168,11 +183,11 @@ Total reward per episode — ΔBIC only`,
     code: `Figures 4–7:
 Hybrid rewards — raw, moving averages (50/100), clipping`,
     images: [
-      "/images/image11.png",
-      "/images/image12.png",
-      "/images/image13.png",
-      "/images/image14.png",
-      "/images/image15.png",
+      process.env.PUBLIC_URL + "/images/image11.png",
+      process.env.PUBLIC_URL + "/images/image12.png",
+      process.env.PUBLIC_URL + "/images/image13.png",
+      process.env.PUBLIC_URL + "/images/image14.png",
+      process.env.PUBLIC_URL + "/images/image15.png",
     ],
     captions: [
       "Hybrid — raw rewards (long run).",
@@ -183,7 +198,7 @@ Hybrid rewards — raw, moving averages (50/100), clipping`,
     ],
   },
 
-  // 8. Results — Hybrid (no-tiling / control) (image18 + image21)
+  // 8. Results — Hybrid (no-tiling)
   {
     title: "Results — Hybrid (no-tiling)",
     subtitle: "Control experiment",
@@ -196,14 +211,17 @@ Hybrid rewards — raw, moving averages (50/100), clipping`,
 → Behaves like ΔBIC-only, fails to reach near-zero rewards`,
     code: `Figure A3:
 Hybrid no-tiling — moving average`,
-    images: ["/images/image18.png", "/images/image21.png"],
+    images: [
+      process.env.PUBLIC_URL + "/images/image18.png",
+      process.env.PUBLIC_URL + "/images/image21.png",
+    ],
     captions: [
       "Figure A3. Hybrid no-tiling — reward trajectory.",
       "Hybrid variant (clipping/MA) comparison.",
     ],
   },
 
-  // 9. Classical Baselines (HC/GES) + 로그 (image4 + image17)
+  // 9. Classical Baselines
   {
     title: "Classical Baselines",
     subtitle: "HC & GES references",
@@ -218,21 +236,27 @@ GES (custom BIC):
     code: `Baseline:
 HC → SHD=18, P=R=F1=0
 GES(ASIA) → SHD=15, P=0.11, R=0.12`,
-    images: ["/images/image4.png", "/images/image17.png"],
+    images: [
+      process.env.PUBLIC_URL + "/images/image4.png",
+      process.env.PUBLIC_URL + "/images/image17.png",
+    ],
     captions: [
       "Baseline log: Hill-Climb vs GES summary.",
       "Extra log excerpt.",
     ],
   },
 
-  // 10. Summary tables / notes (image19 + image20 again for 표/노트)
+  // 10. Results Summary
   {
     title: "Results Summary & Notes",
     subtitle: "Tables & snippets",
     content: `Summary tables of MVP, ΔBIC-only, Hybrid (tiled / no-tiling).
 Arrows: ↑ higher is better; ↓ lower is better.
 Small numerical differences appear across runs due to randomness.`,
-    images: ["/images/image19.png", "/images/image20.png"],
+    images: [
+      process.env.PUBLIC_URL + "/images/image19.png",
+      process.env.PUBLIC_URL + "/images/image20.png",
+    ],
     captions: [
       "Summary table: last-100 mean, best-100 mean, % invalid actions.",
       "Note snippet: equations / settings.",
@@ -264,7 +288,7 @@ Comparison:
 Hybrid > ΔBIC > MVP > HC/GES`,
   },
 
-  // 12. Conclusion & Future Work
+  // 12. Conclusion
   {
     title: "Conclusion & Future Work",
     subtitle: "Summary",
