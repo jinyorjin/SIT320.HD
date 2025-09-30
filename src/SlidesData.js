@@ -234,10 +234,9 @@ Reward trajectory (Hybrid no-tiling, MA=50)`,
 
 GES (custom BIC):
 - Dummy dataset: BIC = -3543.37, SHD = 15
-- ASIA dataset: BIC = -3551.21, SHD = 15, P=0.11, R=0.12, F1=0.12`,
-    code: `Baseline:
-HC → SHD=18, P=R=F1=0
-GES(ASIA) → SHD=15, P=0.11, R=0.12`,
+- ASIA dataset: BIC = -3551.21, SHD = 15, P=0.11, R=0.12, F1=0.12
+This is stronger than HC here but still leaves room for improvement.`,
+    code: `Notes: BIC ↓ is better (more negative). SHD ↓ is better.`,
     images: [
       process.env.PUBLIC_URL + "/images/image4.png",
       process.env.PUBLIC_URL + "/images/image17.png",
@@ -292,19 +291,21 @@ Hybrid > ΔBIC > MVP > HC/GES`,
 
   // 12. Conclusion & Future Work
   {
-    title: "Conclusion & Future Work",
-    subtitle: "Summary",
-    content: `Conclusion:
-Hybrid reward with tiling gave the best trade-off:
-- Stronger structural recovery
-- Better generative fidelity
-- At the cost of variance + compute
+    title: "Future Work",
+    subtitle: "HD Extensions",
+    content: `1) DQN for scalability
+- Replace tabular Q-learning with a Deep Q-Network
+- Generalises across large state spaces; scales to many variables
 
-Future extensions:
-1) Deep Q-Network (DQN) — scalable approximation
-2) Adaptive tiling — learn when to evaluate GenScore
-3) Faster generative scoring — reduce simulation cost`,
-    code: `console.log("Hybrid RL + Tiling = promising but costly");`,
+2) Adaptive tiling (learned schedule)
+- Learn when to add GenScore instead of fixed tile length L
+- Meta-controller decides: use ΔBIC now, add GenScore later
+- Cuts unnecessary evaluations; balances accuracy vs. cost
+
+3) Faster generative scoring
+- Reduce simulation cost via caching, batched sampling, or surrogates
+- Keep global guidance while lowering variance/latency`,
+    code: `Takeaway: Make hybrid RL both smarter (adaptive) and cheaper (efficient).`,
   },
 ];
 
