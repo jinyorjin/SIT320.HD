@@ -219,7 +219,8 @@ Reward trajectory (Hybrid no-tiling, MA=50)`,
     ],
     captions: [
       "Figure A3. Hybrid no-tiling — reward trajectory.",
-      "comparison.",
+      "Comparison log excerpt.",
+      "Extra log / summary view.",
     ],
   },
 
