@@ -10,8 +10,8 @@ Reinforcement Learning for Bayesian Network (BN) Structure Learning
 using a Hybrid Reward (ΔBIC + Generative Score).
 
 Motivation:
-- Go beyond classical score-based search (Hill-Climb, GES).
-- Treat BN structure discovery as a sequential decision process with RL.`,
+- Go beyond classical score-based search methods (Hill-Climb, GES) that often get stuck in local optima.
+- Treat BN structure discovery as a sequential decision-making process with RL to move toward a more optimal global structure`,
     code: `// Portfolio Project Intro
 console.log("Welcome to my SIT320 TASK 11 Project Slides!");`,
   },
@@ -88,8 +88,9 @@ r_t = -α ΔBIC_t + β GenScore(G_t)`,
     subtitle: "Variance control",
     content: `Tiling:
 Tile length L = 10
-- For steps where t mod L ≠ L−1 → use ΔBIC only
-- At t mod L = L−1 → add generative score
+
+- Most steps (t mod L ≠ L−1) → use ΔBIC only → fast local feedback
+- At t mod L = L−1 (last step of each tile) → add Generative Score
 → Dense feedback + periodic global guidance
 
 Parameters:
@@ -109,7 +110,7 @@ Parameters:
 
   // 4. Results — MVP (edge-count)
   {
-    title: "Results — MVP (edge-count)",
+    title: "4.1 Results — MVP (edge-count)",
     subtitle: "Learning curve & Log",
     content: `Observation (200 episodes):
 - Dense positive feedback makes learning stable
@@ -131,7 +132,7 @@ Parameters:
 
   // 5. Results — ΔBIC-only
   {
-    title: "Results — ΔBIC-only",
+    title: "4.2 Results — ΔBIC-only",
     subtitle: "Learning curve & Logs",
     content: `Observation (200 episodes):
 - Rewards mostly negative but trend toward zero
@@ -172,7 +173,7 @@ Total reward per episode — ΔBIC only`,
 
   // 7. Results — Hybrid (tiled)
   {
-    title: "Results — Hybrid (tiled)",
+    title: "4.3Results — Hybrid (tiled)",
     subtitle: "Raw / Moving Average / Clipping",
     content: `Observation (1000 episodes):
 - Improves faster than ΔBIC-only
@@ -183,10 +184,10 @@ Total reward per episode — ΔBIC only`,
     code: `Figures 4–7:
 Hybrid rewards — raw, moving averages (50/100), clipping`,
     images: [
-      process.env.PUBLIC_URL + "/images/image11.png",
+      process.env.PUBLIC_URL + "/images/image9.png",
       process.env.PUBLIC_URL + "/images/image12.png",
       process.env.PUBLIC_URL + "/images/image13.png",
-      process.env.PUBLIC_URL + "/images/image14.png",
+      process.env.PUBLIC_URL + "/images/image10.png",
       process.env.PUBLIC_URL + "/images/image15.png",
     ],
     captions: [
@@ -202,22 +203,23 @@ Hybrid rewards — raw, moving averages (50/100), clipping`,
   {
     title: "Results — Hybrid (no-tiling)",
     subtitle: "Control experiment",
-    content: `Observation (300 episodes):
-- GenScore added every step (no tiling)
-- Mean return (last-100) = -144.39
-- Best 100-ep mean = -137.48
-- Worse than tiled hybrid (-134.7, -121.1)
-- Invalid action rate similar (~83–84%)
-→ Behaves like ΔBIC-only, fails to reach near-zero rewards`,
+    content: `Control run over 300 episodes:
+- Generative score applied every step (no tiling)
+- Mean return (last 100) = −144.39
+- Best 100-episode mean = −137.48
+- Both worse than tiled hybrid (−134.7, −121.1)
+- Invalid action rate ~83–84%, similar to others
+→ Reward curve stays flat near −150, resembling ΔBIC-only and failing to improve`,
     code: `Figure A3:
-Hybrid no-tiling — moving average`,
+Reward trajectory (Hybrid no-tiling, MA=50)`,
     images: [
       process.env.PUBLIC_URL + "/images/image18.png",
-      process.env.PUBLIC_URL + "/images/image21.png",
+      process.env.PUBLIC_URL + "/images/picture5.png",
+      process.env.PUBLIC_URL + "/images/picture7.png",
     ],
     captions: [
       "Figure A3. Hybrid no-tiling — reward trajectory.",
-      "Hybrid variant (clipping/MA) comparison.",
+      "comparison.",
     ],
   },
 
