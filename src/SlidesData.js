@@ -111,17 +111,17 @@ Parameters:
   {
     title: "Results — MVP (edge-count)",
     subtitle: "Learning curve & Log",
-    content: `Observation (100 episodes):
-- Fast convergence from dense positive feedback
-- Final reward = -116.59
-- Mid-run often in -200s, variance shrinks toward end
-- Agent learns to match edge count, not real dependencies`,
-    code: `Figure 2:
-Total reward per episode — MVP`,
+    content: `Observation (200 episodes):
+- Dense positive feedback makes learning stable
+- Early phase mostly 4–8 reward
+- Gradually improves to 10–12 reward
+- Final episodes converge near 12.00
+- Agent focuses on matching target edge count rather than full structural dependencies`,
+    code: `Figure 2: Total reward per episode — MVP (log excerpt from Python run)`,
     images: [
       process.env.PUBLIC_URL + "/images/image2.png",
-      process.env.PUBLIC_URL + "/images/image3.png",
-      process.env.PUBLIC_URL + "/images/image4.png",
+      process.env.PUBLIC_URL + "/images/image23.png",
+      process.env.PUBLIC_URL + "/images/image24.png",
     ],
     captions: [
       "Figure 2. Total reward per episode — MVP.",
