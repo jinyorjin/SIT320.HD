@@ -214,8 +214,8 @@ Hybrid rewards — raw, moving averages (50/100), clipping`,
 Reward trajectory (Hybrid no-tiling, MA=50)`,
     images: [
       process.env.PUBLIC_URL + "/images/image18.png",
-      process.env.PUBLIC_URL + "/images/picture5.png",
-      process.env.PUBLIC_URL + "/images/picture7.png",
+      process.env.PUBLIC_URL + "/images/image19.png",
+      process.env.PUBLIC_URL + "/images/image20.png",
     ],
     captions: [
       "Figure A3. Hybrid no-tiling — reward trajectory.",
