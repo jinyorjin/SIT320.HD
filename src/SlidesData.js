@@ -211,7 +211,9 @@ Hybrid rewards — raw, moving averages (50/100), clipping`,
 - Invalid action rate ~83–84%, similar to others
 → Reward curve stays flat near −150, resembling ΔBIC-only and failing to improve`,
     code: `Figure A3:
-Reward trajectory (Hybrid no-tiling, MA=50)`,
+Reward trajectory (Hybrid no-tiling, MA=50)
+The hybrid model without tiling fails to improve, as the reward curve stays flat near −150, 
+showing that tiling is important for stable learning and better long-term performance. `,
     images: [
       process.env.PUBLIC_URL + "/images/image18.png",
       process.env.PUBLIC_URL + "/images/image19.png",
@@ -237,7 +239,11 @@ GES (custom BIC):
 - Dummy dataset: BIC = -3543.37, SHD = 15
 - ASIA dataset: BIC = -3551.21, SHD = 15, P=0.11, R=0.12, F1=0.12
 This is stronger than HC here but still leaves room for improvement.`,
-    code: `Notes: BIC ↓ is better (more negative). SHD ↓ is better.`,
+    code: `Notes: BIC ↓ is better (more negative). SHD ↓ is better.
+    Why Stuck in local optima?
+No correct edges (Precision = 0, Recall = 0) → the learned graph is far from the true one.
+High SHD → big difference from the true structure.
+BIC score stopped improving at a low level → the search got stuck and could not reach the global best solution.`,
     images: [
       process.env.PUBLIC_URL + "/images/image4.png",
       process.env.PUBLIC_URL + "/images/image17.png",
